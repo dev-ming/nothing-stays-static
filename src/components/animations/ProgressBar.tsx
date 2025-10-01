@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const ProgressBar = () => {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(80);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -9,7 +9,7 @@ const ProgressBar = () => {
         if (prev >= 100) return 0;
         return prev + 1;
       });
-    }, 30);
+    }, 100);
 
     return () => clearInterval(interval);
   }, []);
@@ -18,15 +18,15 @@ const ProgressBar = () => {
     <div className="flex items-center justify-center h-full bg-gradient-to-br from-primary/20 to-accent/30 rounded-2xl p-8">
       <div className="w-full max-w-xs space-y-4">
         <div className="relative h-6 bg-muted rounded-full overflow-hidden">
-          <div 
+          <div
             className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-accent to-primary rounded-full transition-all duration-300 animate-glow"
             style={{ width: `${progress}%` }}
           />
-          <div 
+          <div
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-slide-right"
-            style={{ 
+            style={{
               backgroundSize: '200% 100%',
-              animation: 'slide-right 1.5s linear infinite'
+              animation: 'slide-right 3s linear infinite'
             }}
           />
         </div>

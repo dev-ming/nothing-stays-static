@@ -1,8 +1,8 @@
 // 컴포넌트 코드를 직접 포함하는 방식으로 변경
 
 export const componentCodes: Record<string, { componentCode: string; cssCode: string }> = {
-    'ButtonHover': {
-        componentCode: `const ButtonHover = () => {
+  'ButtonHover': {
+    componentCode: `const ButtonHover = () => {
   return (
     <div className="flex items-center justify-center h-full bg-gradient-to-br from-secondary/30 to-accent/20 rounded-2xl p-8">
       <div className="space-y-4">
@@ -28,13 +28,13 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
 /* 주요 클래스: hover:scale-110, hover:shadow-glow, transition-all */
 /* 그라데이션 효과: bg-gradient-to-r, from-accent, to-primary */
 /* 애니메이션: duration-300, duration-700, ease-in-out */`
-    },
-    'WaveText': {
-        componentCode: `const WaveText = () => {
+  },
+  'WaveText': {
+    componentCode: `const WaveText = () => {
   const texts = ["HELLO!", "WAVE", "TEXT"];
 
   return (
@@ -70,13 +70,13 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
 /* 주요 클래스: animate-bounce-soft, bg-gradient-primary, bg-clip-text */
 /* 텍스트 효과: text-transparent, font-bold, inline-block */
 /* 애니메이션: animate-pulse, animationDelay 동적 설정 */`
-    },
-    'LoadingSpinner': {
-        componentCode: `const LoadingSpinner = () => {
+  },
+  'LoadingSpinner': {
+    componentCode: `const LoadingSpinner = () => {
   return (
     <div className="flex items-center justify-center h-full bg-gradient-to-br from-secondary/30 to-accent/20 rounded-2xl p-8">
       <div className="relative">
@@ -92,13 +92,13 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
 /* 주요 클래스: animate-spin, animate-pulse, border-4 */
 /* 회전 효과: animationDirection: 'reverse', animationDuration: '0.8s' */
 /* 위치 조정: absolute, top-1/2, left-1/2, transform -translate-x-1/2 -translate-y-1/2 */`
-    },
-    'CardFlip': {
-        componentCode: `const CardFlip = () => {
+  },
+  'CardFlip': {
+    componentCode: `const CardFlip = () => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -122,60 +122,59 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
 /* 3D 효과: perspective-1000, transform-style-preserve-3d, backface-hidden */
 /* 회전 효과: rotate-y-180, transition-transform duration-700 */
 /* 상태 관리: useState로 isFlipped 상태 관리 */`
-    },
-    'ProgressBar': {
-        componentCode: `const ProgressBar = () => {
-  const [progress, setProgress] = useState(0);
+  },
+  'ProgressBar': {
+    componentCode: `const ProgressBar = () => {
+  const [progress, setProgress] = useState(80);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress(prev => (prev >= 100 ? 0 : prev + 10));
-    }, 500);
+      setProgress(prev => {
+        if (prev >= 100) return 0;
+        return prev + 1;
+      });
+    }, 100);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-full bg-gradient-to-br from-secondary/30 to-accent/20 rounded-2xl p-8">
-      <div className="w-full max-w-md space-y-4">
-        {/* Animated Progress Bar */}
-        <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-          <div 
-            className="h-full bg-gradient-primary transition-all duration-500 ease-out"
-            style={{ width: \`\${progress}%\` }}
+    <div className="flex items-center justify-center h-full bg-gradient-to-br from-primary/20 to-accent/30 rounded-2xl p-8">
+      <div className="w-full max-w-xs space-y-4">
+        <div className="relative h-6 bg-muted rounded-full overflow-hidden">
+          <div
+            className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-accent to-primary rounded-full transition-all duration-300 animate-glow"
+            style={{ width: \`\${progress}%\`\ }}
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-slide-right"
+            style={{
+              backgroundSize: '200% 100%',
+              animation: 'slide-right 3s linear infinite'
+            }}
           />
         </div>
-        
-        {/* Progress Text */}
-        <div className="text-center">
-          <span className="text-2xl font-bold text-primary">{progress}%</span>
-        </div>
-        
-        {/* Step Progress */}
-        <div className="flex justify-between">
-          {[0, 25, 50, 75, 100].map((step) => (
-            <div 
-              key={step}
-              className={\`w-3 h-3 rounded-full transition-all duration-300 \${progress >= step ? 'bg-primary' : 'bg-muted'}\`}
-            />
-          ))}
-        </div>
+        <p className="text-center font-bold text-2xl bg-gradient-primary bg-clip-text text-transparent">
+          {progress}%
+        </p>
       </div>
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
-/* 프로그레스 바: bg-muted, rounded-full, overflow-hidden */
-/* 애니메이션: transition-all duration-500 ease-out */
-/* 상태 관리: useState, useEffect로 자동 진행률 업데이트 */
-/* 스텝 표시: map으로 0, 25, 50, 75, 100% 점 표시 */`
-    },
-    'FloatingHearts': {
-        componentCode: `const FloatingHearts = () => {
+    cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
+/* 프로그레스 바: relative, h-6, bg-muted, rounded-full, overflow-hidden */
+/* 그라데이션 바: bg-gradient-to-r from-primary via-accent to-primary */
+/* 글로우 효과: animate-glow로 발광 애니메이션 */
+/* 슬라이드 효과: animate-slide-right로 빛이 지나가는 효과 */
+/* 텍스트 효과: bg-gradient-primary bg-clip-text text-transparent */
+/* 상태 관리: useState, useEffect로 100ms마다 1%씩 증가 */`
+  },
+  'FloatingHearts': {
+    componentCode: `const FloatingHearts = () => {
   return (
     <div className="flex items-center justify-center h-full bg-gradient-to-br from-secondary/30 to-accent/20 rounded-2xl p-8 relative overflow-hidden">
       <div className="text-center">
@@ -201,14 +200,14 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 주로 Tailwind CSS 클래스를 사용합니다. */
 /* 떠오르는 효과: animate-float, absolute positioning */
 /* 애니메이션 지연: animationDelay, animationDuration 동적 설정 */
 /* 레이아웃: relative overflow-hidden으로 컨테이너 설정 */
 /* 이모지: ❤️ 이모지를 사용한 시각적 효과 */`
-    },
-    'MorphingShapes': {
-        componentCode: `const MorphingShapes = () => {
+  },
+  'MorphingShapes': {
+    componentCode: `const MorphingShapes = () => {
   const [shape, setShape] = useState(0);
   
   const shapes = [
@@ -246,14 +245,14 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 SVG와 CSS를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 SVG와 CSS를 사용합니다. */
 /* SVG path: M, L, C 명령어로 도형 정의 */
 /* 모핑 효과: transition-all duration-1000 ease-in-out */
 /* 그라데이션: linearGradient, stopColor로 색상 정의 */
 /* 상태 관리: useState, useEffect로 2초마다 도형 변경 */`
-    },
-    'ParticleSystem': {
-        componentCode: `const ParticleSystem = () => {
+  },
+  'ParticleSystem': {
+    componentCode: `const ParticleSystem = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [particles, setParticles] = useState<any[]>([]);
 
@@ -311,14 +310,14 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
     </div>
   );
 };`,
-        cssCode: `/* 이 컴포넌트는 Canvas API를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 Canvas API를 사용합니다. */
 /* Canvas 렌더링: ctx.clearRect, ctx.beginPath, ctx.arc, ctx.fill */
 /* 파티클 물리: 위치, 속도, 크기 속성으로 움직임 구현 */
 /* 애니메이션 루프: requestAnimationFrame으로 부드러운 애니메이션 */
 /* 경계 처리: 벽에 부딪히면 속도 반전 */`
-    },
-    'ScrollReveal': {
-        componentCode: `const ScrollReveal = () => {
+  },
+  'ScrollReveal': {
+    componentCode: `const ScrollReveal = () => {
     const [isVisible, setIsVisible] = useState(false);
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -407,25 +406,25 @@ export const componentCodes: Record<string, { componentCode: string; cssCode: st
         </div>
     );
 };`,
-        cssCode: `/* 이 컴포넌트는 Intersection Observer API를 사용합니다. */
+    cssCode: `/* 이 컴포넌트는 Intersection Observer API를 사용합니다. */
 /* 스크롤 감지: IntersectionObserver로 요소 가시성 감지 */
 /* 애니메이션: opacity, translate-x, transition-all duration-700 */
 /* 지연 효과: transitionDelay로 순차적 등장 */
 /* 프로그레스 바: width 0%에서 100%로 애니메이션 */
 /* 부동 요소: bounce-soft 애니메이션으로 생동감 추가 */`
-    }
+  }
 };
 
 // 코드 추출 함수
 export const extractCodeInDevelopment = async (componentName: string) => {
-    const code = componentCodes[componentName];
-    if (code) {
-        return code;
-    }
+  const code = componentCodes[componentName];
+  if (code) {
+    return code;
+  }
 
-    // 기본 메시지 반환
-    return {
-        componentCode: `// ${componentName} 컴포넌트 코드\n// 코드를 찾을 수 없습니다.`,
-        cssCode: `/* ${componentName} CSS 코드 */\n/* 코드를 찾을 수 없습니다. */`
-    };
+  // 기본 메시지 반환
+  return {
+    componentCode: `// ${componentName} 컴포넌트 코드\n// 코드를 찾을 수 없습니다.`,
+    cssCode: `/* ${componentName} CSS 코드 */\n/* 코드를 찾을 수 없습니다. */`
+  };
 };
