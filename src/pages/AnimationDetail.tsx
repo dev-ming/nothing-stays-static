@@ -24,6 +24,8 @@ const AnimationDetail = () => {
     // 애니메이션 데이터 가져오기
     const animation = getAnimationById(Number(id));
 
+    console.log(animation);
+
     // 컴포넌트 코드 추출
     useEffect(() => {
         if (animation) {
@@ -33,6 +35,8 @@ const AnimationDetail = () => {
                 setCssCode(cssCode);
             });
         }
+        console.log(componentCode);
+        console.log(cssCode);
     }, [animation]);
 
     // 애니메이션을 찾을 수 없는 경우
