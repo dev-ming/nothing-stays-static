@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/glass-heart.png";
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -40,8 +41,8 @@ const Header = () => {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex items-center space-x-2">
-                        <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                            <span className="text-primary-foreground font-bold text-sm">NS</span>
+                        <div className="w-8 h-8 flex items-center justify-center">
+                            <img src={logo} alt="logo" className="w-8 h-8" />
                         </div>
                         <span className="font-bold text-xl bg-gradient-primary bg-clip-text text-transparent nanum-pen-script-regular">
                             Nothing Stays Static
