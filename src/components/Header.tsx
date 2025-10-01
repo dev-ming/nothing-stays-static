@@ -23,9 +23,9 @@ const Header = () => {
     ];
 
     const socialLinks = [
-        { icon: Github, href: "https://github.com", label: "GitHub" },
-        { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-        { icon: Mail, href: "mailto:contact@example.com", label: "Email" },
+        { icon: Github, href: "https://github.com/dev-ming", label: "GitHub" },
+        { icon: Linkedin, href: "https://www.linkedin.com/in/%EB%AF%BC%EC%A7%80-%EA%B9%80-8b606125a/", label: "LinkedIn" },
+        { icon: Mail, href: "mailto:ruaaa1307@gmail.com", label: "Email" },
     ];
 
     return (
@@ -63,7 +63,7 @@ const Header = () => {
                     </nav>
 
                     {/* Social Links */}
-                    <div className="hidden md:flex items-center space-x-4">
+                    <div className="hidden md:flex items-center space-x-4 px-10">
                         {socialLinks.map((social) => (
                             <a
                                 key={social.label}

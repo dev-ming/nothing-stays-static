@@ -39,7 +39,7 @@ const HeroSection = () => {
                             Static
                         </span>
                     </h1>
-                    <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
+                    <p className="text-md sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
                         다양한 애니메이션 라이브러리와 기법을 연습하고 실험하는 갤러리입니다
                     </p>
                 </div>
@@ -56,12 +56,12 @@ const HeroSection = () => {
                     </div>
                     <div className="flex items-center gap-2">
                         <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span className="text-xs sm:text-sm">Framer Motion</span>
+                        <span className="text-xs sm:text-sm">Motion</span>
                     </div>
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Button
                         size="lg"
                         className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
@@ -69,10 +69,10 @@ const HeroSection = () => {
                     >
                         갤러리 보기
                     </Button>
-                </div>
+                </div> */}
 
                 {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div className="animate-bounce-soft pt-24">
                     <Button
                         variant="ghost"
                         size="sm"

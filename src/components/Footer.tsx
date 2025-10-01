@@ -24,7 +24,7 @@ const Footer = () => {
                         </div>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                             다양한 애니메이션 라이브러리와 기법을 연습하고 실험하는 갤러리입니다.
-                            CSS, SVG, Canvas, JavaScript를 활용한 인터랙티브한 애니메이션 작품들을 모아두었습니다.
+                            CSS, SVG, Canvas, JavaScript, Motion를 활용한 인터랙티브한 애니메이션 작품들을 모아두었습니다.
                         </p>
                     </div>
 
@@ -51,8 +51,8 @@ const Footer = () => {
                         <h3 className="font-semibold text-foreground">Contact</h3>
                         <div className="space-y-2 text-sm text-muted-foreground">
                             <p>Seoul, South Korea</p>
-                            <p>contact@example.com</p>
-                            <p>+82 10-1234-5678</p>
+                            <p>ruaaa1307@gmail.com</p>
+                            {/* <p>+82 10-1234-5678</p> */}
                         </div>
                     </div>
                 </div>
