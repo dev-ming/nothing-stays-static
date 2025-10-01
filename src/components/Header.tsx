@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import LanguageSwitcher from "./LanguageSwitcher";
 import logo from "@/assets/glass-heart.png";
 
 const Header = () => {
@@ -62,8 +63,9 @@ const Header = () => {
                         ))}
                     </nav>
 
-                    {/* Social Links */}
+                    {/* Social Links & Language Switcher */}
                     <div className="hidden md:flex items-center space-x-4 px-10">
+                        <LanguageSwitcher />
                         {socialLinks.map((social) => (
                             <a
                                 key={social.label}
@@ -103,19 +105,22 @@ const Header = () => {
                                     {item.name}
                                 </a>
                             ))}
-                            <div className="flex items-center space-x-4 pt-4 border-t border-border/50">
-                                {socialLinks.map((social) => (
-                                    <a
-                                        key={social.label}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                                        aria-label={social.label}
-                                    >
-                                        <social.icon className="w-5 h-5" />
-                                    </a>
-                                ))}
+                            <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                                <div className="flex items-center space-x-4">
+                                    {socialLinks.map((social) => (
+                                        <a
+                                            key={social.label}
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                                            aria-label={social.label}
+                                        >
+                                            <social.icon className="w-5 h-5" />
+                                        </a>
+                                    ))}
+                                </div>
+                                <LanguageSwitcher />
                             </div>
                         </nav>
                     </div>

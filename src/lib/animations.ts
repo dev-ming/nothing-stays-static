@@ -7,6 +7,7 @@ import FloatingHearts from "@/components/animations/FloatingHearts";
 import MorphingShapes from "@/components/animations/MorphingShapes";
 import ParticleSystem from "@/components/animations/ParticleSystem";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import i18n from "./i18n";
 
 export interface AnimationData {
     id: number;
@@ -20,11 +21,11 @@ export interface AnimationData {
     githubUrl?: string;
 }
 
-export const animations: AnimationData[] = [
+export const getAnimations = (): AnimationData[] => [
     {
         id: 1,
-        title: "Button Hover Effect",
-        description: "마우스 호버 시 그라데이션과 글로우 효과가 적용되는 버튼 애니메이션입니다.",
+        title: i18n.t("animations.buttonHover.title"),
+        description: i18n.t("animations.buttonHover.description"),
         category: "interaction",
         technologies: ["CSS", "React"],
         component: ButtonHover,
@@ -32,8 +33,8 @@ export const animations: AnimationData[] = [
     },
     {
         id: 2,
-        title: "Wave Text Animation",
-        description: "각 글자가 순차적으로 바운스하는 타이포그래피 애니메이션입니다.",
+        title: i18n.t("animations.waveText.title"),
+        description: i18n.t("animations.waveText.description"),
         category: "typography",
         technologies: ["CSS", "React"],
         component: WaveText,
@@ -41,40 +42,40 @@ export const animations: AnimationData[] = [
     },
     {
         id: 3,
-        title: "Loading Spinner",
-        description: "이중 회전 효과를 가진 로딩 스피너 애니메이션입니다.",
+        title: i18n.t("animations.loadingSpinner.title"),
+        description: i18n.t("animations.loadingSpinner.description"),
         category: "loading",
         technologies: ["CSS"],
         component: LoadingSpinner
     },
     {
         id: 4,
-        title: "3D Card Flip",
-        description: "3D 변환을 활용한 카드 플립 애니메이션입니다.",
+        title: i18n.t("animations.cardFlip.title"),
+        description: i18n.t("animations.cardFlip.description"),
         category: "3d",
         technologies: ["CSS", "3D Transform"],
         component: CardFlip
     },
     {
         id: 5,
-        title: "Progress Bar",
-        description: "인터랙티브한 프로그레스 바 애니메이션입니다.",
+        title: i18n.t("animations.progressBar.title"),
+        description: i18n.t("animations.progressBar.description"),
         category: "interaction",
         technologies: ["CSS", "React"],
         component: ProgressBar
     },
     {
         id: 6,
-        title: "Floating Hearts",
-        description: "하트 이모지가 떠오르는 로맨틱한 애니메이션입니다.",
+        title: i18n.t("animations.floatingHearts.title"),
+        description: i18n.t("animations.floatingHearts.description"),
         category: "particle",
         technologies: ["CSS"],
         component: FloatingHearts
     },
     {
         id: 7,
-        title: "Morphing Shapes",
-        description: "SVG를 활용한 도형 변형 애니메이션입니다.",
+        title: i18n.t("animations.morphingShapes.title"),
+        description: i18n.t("animations.morphingShapes.description"),
         category: "svg",
         technologies: ["SVG", "CSS"],
         component: MorphingShapes,
@@ -82,29 +83,31 @@ export const animations: AnimationData[] = [
     },
     {
         id: 8,
-        title: "Particle System",
-        description: "Canvas를 활용한 인터랙티브 파티클 시스템입니다.",
+        title: i18n.t("animations.particleSystem.title"),
+        description: i18n.t("animations.particleSystem.description"),
         category: "canvas",
         technologies: ["Canvas", "JavaScript"],
         component: ParticleSystem
     },
     {
         id: 9,
-        title: "Scroll Reveal",
-        description: "스크롤에 반응하는 요소 등장 애니메이션입니다.",
+        title: i18n.t("animations.scrollReveal.title"),
+        description: i18n.t("animations.scrollReveal.description"),
         category: "scroll",
         technologies: ["CSS", "Intersection Observer"],
         component: ScrollReveal
     }
 ];
 
+export const animations = getAnimations();
+
 export const getAnimationById = (id: number): AnimationData | undefined => {
     return animations.find(anim => anim.id === id);
 };
 
-export const getAnimationsByCategory = (category: string): AnimationData[] => {
-    if (category === "all") return animations;
-    return animations.filter(anim => anim.category === category);
+export const getAnimationsByCategory = (category: string, animationsList: AnimationData[] = animations): AnimationData[] => {
+    if (category === "all") return animationsList;
+    return animationsList.filter(anim => anim.category === category);
 };
 
 export const getFeaturedAnimations = (): AnimationData[] => {

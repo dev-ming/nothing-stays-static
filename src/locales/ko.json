@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "홈",
+    "gallery": "갤러리",
+    "about": "소개"
+  },
+  "hero": {
+    "title": "Nothing Stays Static",
+    "subtitle": "다양한 애니메이션 라이브러리와 기법을 연습하고 실험하는 갤러리입니다",
+    "badge": "Animation Practice Gallery"
+  },
+  "gallery": {
+    "title": "Animation Gallery",
+    "subtitle": "다양한 라이브러리와 기법을 활용한 애니메이션 연습 작품들입니다",
+    "categories": {
+      "all": "전체",
+      "interaction": "인터랙션",
+      "typography": "타이포그래피",
+      "loading": "로딩",
+      "3d": "3D 효과",
+      "particle": "파티클",
+      "svg": "SVG",
+      "canvas": "캔버스",
+      "scroll": "스크롤"
+    }
+  },
+  "animations": {
+    "buttonHover": {
+      "title": "Button Hover Effect",
+      "description": "마우스 호버 시 그라데이션과 글로우 효과가 적용되는 버튼 애니메이션입니다."
+    },
+    "waveText": {
+      "title": "Wave Text Animation",
+      "description": "각 글자가 순차적으로 바운스하는 타이포그래피 애니메이션입니다."
+    },
+    "loadingSpinner": {
+      "title": "Loading Spinner",
+      "description": "이중 회전 효과를 가진 로딩 스피너 애니메이션입니다."
+    },
+    "cardFlip": {
+      "title": "3D Card Flip",
+      "description": "3D 변환을 활용한 카드 플립 애니메이션입니다."
+    },
+    "progressBar": {
+      "title": "Progress Bar",
+      "description": "인터랙티브한 프로그레스 바 애니메이션입니다."
+    },
+    "floatingHearts": {
+      "title": "Floating Hearts",
+      "description": "하트 이모지가 떠오르는 로맨틱한 애니메이션입니다."
+    },
+    "morphingShapes": {
+      "title": "Morphing Shapes",
+      "description": "SVG를 활용한 도형 변형 애니메이션입니다."
+    },
+    "particleSystem": {
+      "title": "Particle System",
+      "description": "Canvas를 활용한 인터랙티브 파티클 시스템입니다."
+    },
+    "scrollReveal": {
+      "title": "Scroll Reveal",
+      "description": "스크롤에 반응하는 요소 등장 애니메이션입니다."
+    }
+  },
+  "footer": {
+    "description": "다양한 애니메이션 기법을 연습하고 실험하는 갤러리",
+    "technologies": "기술 스택",
+    "copyright": "© 2024 Nothing Stays Static. 개인 학습 및 포트폴리오 목적으로 제작되었습니다."
+  },
+  "common": {
+    "viewGallery": "갤러리 보기",
+    "scrollDown": "아래로 스크롤",
+    "technologies": "기술",
+    "category": "카테고리",
+    "featured": "추천",
+    "viewDetails": "자세히 보기"
+  }
+}

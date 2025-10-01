@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Nothing Stays Static",
+    "subtitle": "A gallery for practicing and experimenting with various animation libraries and techniques",
+    "badge": "Animation Practice Gallery"
+  },
+  "gallery": {
+    "title": "Animation Gallery",
+    "subtitle": "Animation practice works using various libraries and techniques",
+    "categories": {
+      "all": "All",
+      "interaction": "Interaction",
+      "typography": "Typography",
+      "loading": "Loading",
+      "3d": "3D Effects",
+      "particle": "Particle",
+      "svg": "SVG",
+      "canvas": "Canvas",
+      "scroll": "Scroll"
+    }
+  },
+  "animations": {
+    "buttonHover": {
+      "title": "Button Hover Effect",
+      "description": "A button animation with gradient and glow effects on mouse hover."
+    },
+    "waveText": {
+      "title": "Wave Text Animation",
+      "description": "A typography animation where each character bounces sequentially."
+    },
+    "loadingSpinner": {
+      "title": "Loading Spinner",
+      "description": "A loading spinner animation with dual rotation effects."
+    },
+    "cardFlip": {
+      "title": "3D Card Flip",
+      "description": "A card flip animation using 3D transformations."
+    },
+    "progressBar": {
+      "title": "Progress Bar",
+      "description": "An interactive progress bar animation."
+    },
+    "floatingHearts": {
+      "title": "Floating Hearts",
+      "description": "A romantic animation with floating heart emojis."
+    },
+    "morphingShapes": {
+      "title": "Morphing Shapes",
+      "description": "A shape morphing animation using SVG."
+    },
+    "particleSystem": {
+      "title": "Particle System",
+      "description": "An interactive particle system using Canvas."
+    },
+    "scrollReveal": {
+      "title": "Scroll Reveal",
+      "description": "An element reveal animation that responds to scrolling."
+    }
+  },
+  "footer": {
+    "description": "A gallery for practicing and experimenting with various animation techniques",
+    "technologies": "Technologies",
+    "copyright": "© 2024 Nothing Stays Static. Created for personal learning and portfolio purposes."
+  },
+  "common": {
+    "viewGallery": "View Gallery",
+    "scrollDown": "Scroll Down",
+    "technologies": "Technologies",
+    "category": "Category",
+    "featured": "Featured",
+    "viewDetails": "View Details"
+  }
+}

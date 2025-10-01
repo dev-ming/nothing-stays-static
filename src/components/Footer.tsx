@@ -1,8 +1,11 @@
 import { Heart, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/glass-heart.png";
 
 const Footer = () => {
+    const { t } = useTranslation();
+    
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
@@ -24,8 +27,7 @@ const Footer = () => {
                             </span>
                         </div>
                         <p className="text-muted-foreground text-sm leading-relaxed">
-                            다양한 애니메이션 라이브러리와 기법을 연습하고 실험하는 갤러리입니다.
-                            CSS, SVG, Canvas, JavaScript, Motion를 활용한 인터랙티브한 애니메이션 작품들을 모아두었습니다.
+                            {t("footer.description")}
                         </p>
                     </div>
 
@@ -61,9 +63,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border/50">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>© {currentYear} Nothing Stays Static. Made with</span>
-                        <Heart className="w-4 h-4 text-primary fill-current" />
-                        <span>for learning & practice</span>
+                        <span>{t("footer.copyright")}</span>
                     </div>
 
                     <Button

@@ -1,28 +1,31 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import AnimationCard from "./AnimationCard";
-import { animations, getAnimationsByCategory } from "@/lib/animations";
+import { getAnimations, getAnimationsByCategory } from "@/lib/animations";
 
 const AnimationShowcase = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [activeCategory, setActiveCategory] = useState("all");
 
 
 
     const categories = [
-        { id: "all", name: "All" },
-        { id: "interaction", name: "Interaction" },
-        { id: "typography", name: "Typography" },
-        { id: "loading", name: "Loading" },
-        { id: "3d", name: "3D Effects" },
-        { id: "particle", name: "Particle" },
-        { id: "svg", name: "SVG" },
-        { id: "canvas", name: "Canvas" },
-        { id: "scroll", name: "Scroll" }
+        { id: "all", name: t("gallery.categories.all") },
+        { id: "interaction", name: t("gallery.categories.interaction") },
+        { id: "typography", name: t("gallery.categories.typography") },
+        { id: "loading", name: t("gallery.categories.loading") },
+        { id: "3d", name: t("gallery.categories.3d") },
+        { id: "particle", name: t("gallery.categories.particle") },
+        { id: "svg", name: t("gallery.categories.svg") },
+        { id: "canvas", name: t("gallery.categories.canvas") },
+        { id: "scroll", name: t("gallery.categories.scroll") }
     ];
 
-    const filteredAnimations = getAnimationsByCategory(activeCategory);
+    const animations = getAnimations();
+    const filteredAnimations = getAnimationsByCategory(activeCategory, animations);
 
     return (
         <section id="animations" className="py-20">
@@ -30,11 +33,11 @@ const AnimationShowcase = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance nanum-pen-script-regular">
-                        <span className="bg-gradient-primary bg-clip-text text-transparent">Animation</span>
-                        <span className="text-foreground"> Gallery</span>
+                        <span className="bg-gradient-primary bg-clip-text text-transparent">{t("gallery.title").split(' ')[0]}</span>
+                        <span className="text-foreground"> {t("gallery.title").split(' ')[1]}</span>
                     </h2>
                     <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-                        다양한 라이브러리와 기법을 활용한 애니메이션 연습 작품들입니다
+                        {t("gallery.subtitle")}
                     </p>
                 </div>
 

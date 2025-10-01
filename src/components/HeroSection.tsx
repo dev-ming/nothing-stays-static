@@ -1,7 +1,10 @@
 import { ArrowDown, Sparkles, Code, Palette, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+    const { t } = useTranslation();
+    
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId.replace("#", ""));
         if (element) {
@@ -25,7 +28,7 @@ const HeroSection = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
                     <Sparkles className="w-4 h-4 text-primary" />
-                    <span className="text-sm text-primary font-medium">Animation Practice Gallery</span>
+                    <span className="text-sm text-primary font-medium">{t("hero.badge")}</span>
                 </div>
 
                 {/* Main Title */}
@@ -40,7 +43,7 @@ const HeroSection = () => {
                         </span>
                     </h1>
                     <p className="text-md sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-balance">
-                        다양한 애니메이션 라이브러리와 기법을 연습하고 실험하는 갤러리입니다
+                        {t("hero.subtitle")}
                     </p>
                 </div>
 
