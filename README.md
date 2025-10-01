@@ -1,73 +1,121 @@
-# Welcome to your Lovable project
+# Nothing Stays Static
 
-## Project info
+다양한 애니메이션 라이브러리와 기법을 연습하고 실험하는 갤러리입니다.
 
-**URL**: https://lovable.dev/projects/202d9d4b-48e0-4229-b163-c53bb0b18f5f
+## 🎨 프로젝트 소개
 
-## How can I edit this code?
+이 프로젝트는 React와 CSS를 활용하여 다양한 애니메이션 효과를 구현하고 학습하는 포트폴리오 갤러리입니다. 각 애니메이션은 카테고리별로 분류되어 있으며, 인터랙티브한 미리보기와 상세 정보를 제공합니다.
 
-There are several ways of editing your application.
+## ✨ 주요 기능
 
-**Use Lovable**
+- **카테고리별 필터링**: Interaction, Typography, Loading, 3D Effects, Particle, SVG, Canvas, Scroll 등
+- **인터랙티브 갤러리**: 각 애니메이션의 실시간 미리보기
+- **상세 페이지**: 개별 애니메이션의 상세 정보 및 코드 예제
+- **반응형 디자인**: 모바일부터 데스크톱까지 최적화된 UI
+- **모던 UI**: shadcn/ui 컴포넌트와 Tailwind CSS를 활용한 세련된 디자인
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/202d9d4b-48e0-4229-b163-c53bb0b18f5f) and start prompting.
+## 🎯 포함된 애니메이션
 
-Changes made via Lovable will be committed automatically to this repo.
+### Interaction
+- **Button Hover Effect**: 마우스 호버 시 그라데이션과 글로우 효과
+- **Progress Bar**: 인터랙티브한 프로그레스 바
 
-**Use your preferred IDE**
+### Typography
+- **Wave Text Animation**: 각 글자가 순차적으로 바운스하는 타이포그래피
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Loading
+- **Loading Spinner**: 이중 회전 효과를 가진 로딩 스피너
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 3D Effects
+- **3D Card Flip**: 3D 변환을 활용한 카드 플립
 
-Follow these steps:
+### Particle
+- **Floating Hearts**: 하트 이모지가 떠오르는 로맨틱한 애니메이션
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### SVG
+- **Morphing Shapes**: SVG를 활용한 도형 변형
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Canvas
+- **Particle System**: Canvas를 활용한 인터랙티브 파티클 시스템
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Scroll
+- **Scroll Reveal**: 스크롤에 반응하는 요소 등장 애니메이션
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 🛠️ 기술 스택
+
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui
+- **Build Tool**: Vite
+- **Routing**: React Router DOM
+- **State Management**: React Query
+- **Icons**: Lucide React
+- **Animation**: CSS Animations, CSS Transforms, Canvas API
+
+## 🚀 시작하기
+
+### 필수 요구사항
+- Node.js 18+ 
+- npm 또는 yarn
+
+### 설치 및 실행
+
+```bash
+# 저장소 클론
+git clone <repository-url>
+cd nothing-stays-static
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+브라우저에서 `http://localhost:8080`으로 접속하여 애플리케이션을 확인할 수 있습니다.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 빌드
 
-**Use GitHub Codespaces**
+```bash
+# 프로덕션 빌드
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# 빌드 미리보기
+npm run preview
+```
 
-## What technologies are used for this project?
+## 📁 프로젝트 구조
 
-This project is built with:
+```
+src/
+├── components/           # 재사용 가능한 컴포넌트
+│   ├── animations/      # 애니메이션 컴포넌트들
+│   ├── ui/             # shadcn/ui 컴포넌트
+│   ├── AnimationCard.tsx
+│   ├── AnimationModal.tsx
+│   ├── AnimationShowcase.tsx
+│   ├── Header.tsx
+│   ├── HeroSection.tsx
+│   └── Footer.tsx
+├── pages/              # 페이지 컴포넌트
+│   ├── Index.tsx
+│   ├── AnimationDetail.tsx
+│   └── NotFound.tsx
+├── lib/                # 유틸리티 및 설정
+│   ├── animations.ts   # 애니메이션 데이터
+│   ├── utils.ts
+│   └── codeExtractor.ts
+├── hooks/              # 커스텀 훅
+├── assets/             # 정적 자산
+└── App.tsx             # 메인 앱 컴포넌트
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 디자인 시스템
 
-## How can I deploy this project?
+- **컬러 팔레트**: 그라데이션 기반의 모던한 컬러 스킴
+- **타이포그래피**: 나눔펜스크립트 폰트를 활용한 친근한 느낌
+- **애니메이션**: 부드럽고 자연스러운 전환 효과
+- **레이아웃**: 그리드 기반의 반응형 레이아웃
 
-Simply open [Lovable](https://lovable.dev/projects/202d9d4b-48e0-4229-b163-c53bb0b18f5f) and click on Share -> Publish.
+## 📝 라이선스
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+이 프로젝트는 개인 학습 및 포트폴리오 목적으로 제작되었습니다.
