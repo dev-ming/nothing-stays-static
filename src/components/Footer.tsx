@@ -1,5 +1,6 @@
 import { Heart, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/glass-heart.png";
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -15,8 +16,8 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-4">
                         <div className="flex items-center space-x-2">
-                            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                                <span className="text-primary-foreground font-bold text-sm">NS</span>
+                            <div className="w-8 h-8 flex items-center justify-center">
+                                <img src={logo} alt="logo" className="w-8 h-8" />
                             </div>
                             <span className="font-bold text-xl bg-gradient-primary bg-clip-text text-transparent nanum-pen-script-regular">
                                 Nothing Stays Static
