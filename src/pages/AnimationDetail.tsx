@@ -29,14 +29,12 @@ const AnimationDetail = () => {
     // 컴포넌트 코드 추출
     useEffect(() => {
         if (animation) {
-            const componentName = animation.component.name;
+            const componentName = animation.componentName;
             extractCodeInDevelopment(componentName).then(({ componentCode, cssCode }) => {
                 setComponentCode(componentCode);
                 setCssCode(cssCode);
             });
         }
-        console.log(componentCode);
-        console.log(cssCode);
     }, [animation]);
 
     // 애니메이션을 찾을 수 없는 경우

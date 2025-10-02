@@ -16,6 +16,7 @@ export interface AnimationData {
     category: string;
     technologies: string[];
     component: React.ComponentType;
+    componentName: string; // 컴포넌트 이름을 명시적으로 저장
     featured?: boolean;
     demoUrl?: string;
     githubUrl?: string;
@@ -29,6 +30,7 @@ export const getAnimations = (): AnimationData[] => [
         category: "interaction",
         technologies: ["CSS", "React"],
         component: ButtonHover,
+        componentName: "ButtonHover",
         featured: true
     },
     {
@@ -38,6 +40,7 @@ export const getAnimations = (): AnimationData[] => [
         category: "typography",
         technologies: ["CSS", "React"],
         component: WaveText,
+        componentName: "WaveText",
         featured: true
     },
     {
@@ -46,7 +49,8 @@ export const getAnimations = (): AnimationData[] => [
         description: i18n.t("animations.loadingSpinner.description"),
         category: "loading",
         technologies: ["CSS"],
-        component: LoadingSpinner
+        component: LoadingSpinner,
+        componentName: "LoadingSpinner"
     },
     {
         id: 4,
@@ -54,7 +58,8 @@ export const getAnimations = (): AnimationData[] => [
         description: i18n.t("animations.cardFlip.description"),
         category: "3d",
         technologies: ["CSS", "3D Transform"],
-        component: CardFlip
+        component: CardFlip,
+        componentName: "CardFlip"
     },
     {
         id: 5,
@@ -62,7 +67,8 @@ export const getAnimations = (): AnimationData[] => [
         description: i18n.t("animations.progressBar.description"),
         category: "interaction",
         technologies: ["CSS", "React"],
-        component: ProgressBar
+        component: ProgressBar,
+        componentName: "ProgressBar"
     },
     {
         id: 6,
@@ -70,7 +76,8 @@ export const getAnimations = (): AnimationData[] => [
         description: i18n.t("animations.floatingHearts.description"),
         category: "particle",
         technologies: ["CSS"],
-        component: FloatingHearts
+        component: FloatingHearts,
+        componentName: "FloatingHearts"
     },
     {
         id: 7,
@@ -79,6 +86,7 @@ export const getAnimations = (): AnimationData[] => [
         category: "svg",
         technologies: ["SVG", "CSS"],
         component: MorphingShapes,
+        componentName: "MorphingShapes",
         featured: true
     },
     {
@@ -87,7 +95,8 @@ export const getAnimations = (): AnimationData[] => [
         description: i18n.t("animations.particleSystem.description"),
         category: "canvas",
         technologies: ["Canvas", "JavaScript"],
-        component: ParticleSystem
+        component: ParticleSystem,
+        componentName: "ParticleSystem"
     },
     {
         id: 9,
@@ -95,7 +104,8 @@ export const getAnimations = (): AnimationData[] => [
         description: i18n.t("animations.scrollReveal.description"),
         category: "scroll",
         technologies: ["CSS", "Intersection Observer"],
-        component: ScrollReveal
+        component: ScrollReveal,
+        componentName: "ScrollReveal"
     }
 ];
 

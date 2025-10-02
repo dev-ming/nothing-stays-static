@@ -20,9 +20,9 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(320_80%_70%_/_0.1),transparent_50%)]" />
 
             {/* Floating Elements */}
-            <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-primary rounded-full opacity-20 animate-float" style={{ animationDelay: "0s" }} />
-            <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-primary rounded-full opacity-15 animate-float" style={{ animationDelay: "1s" }} />
-            <div className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-primary rounded-full opacity-25 animate-float" style={{ animationDelay: "2s" }} />
+            <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-primary rounded-full opacity-20 animate-float blur-md" style={{ animationDelay: "0s" }} />
+            <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-primary rounded-full opacity-15 animate-float blur-md" style={{ animationDelay: "1s" }} />
+            <div className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-primary rounded-full opacity-25 animate-float blur-md" style={{ animationDelay: "2s" }} />
 
             <div className="relative z-10 text-center space-y-8 px-4 max-w-4xl mx-auto">
                 {/* Badge */}
